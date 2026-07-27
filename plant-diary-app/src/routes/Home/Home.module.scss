@@ -1,0 +1,494 @@
+.pageOuter {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.appFrame {
+  width: 100%;
+  max-width: 440px;
+  background: var(--color-app-bg);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(43, 42, 37, 0.12);
+}
+
+// Header
+.header {
+  padding: 22px 22px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dateLabel {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.greeting {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 24px;
+  color: var(--color-primary);
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+// Sticky pill nav
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 6px;
+  padding: 6px 18px 10px;
+  background: rgba(247, 244, 238, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navItem {
+  flex: 1;
+  text-align: center;
+  padding: 9px 0;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: #4b4a42;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.navItemActive {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.navItem:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+// Sections
+.section {
+  padding: 30px 22px 8px;
+  scroll-margin-top: 56px;
+}
+
+.sectionInner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  color: var(--color-primary);
+  margin: 0;
+  font-weight: 400;
+}
+
+.subheading {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 4px 0 0;
+}
+
+// Info card (daily)
+.infoCard {
+  background: var(--color-primary-light);
+  border-radius: 20px;
+  padding: 18px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.infoIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.infoSubtitle {
+  font-size: 12.5px;
+  color: rgba(31, 77, 58, 0.75);
+  line-height: 1.5;
+}
+
+// Inline add forms
+.inlineForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.inlineForm input {
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: #fff;
+}
+
+.inlineForm input[type='text'] {
+  flex: 1 1 160px;
+}
+
+.inlineForm button {
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  border-radius: 10px;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.empty {
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+// Daily task list
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.plantGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plantGroupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.taskRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 13px 16px;
+  box-shadow: 0 1px 2px rgba(43, 42, 37, 0.05);
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  width: 100%;
+}
+
+.taskRowBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.taskRowTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.taskRowTitleDone {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: line-through;
+  text-decoration-color: rgba(43, 42, 37, 0.3);
+}
+
+.taskRowMeta {
+  font-size: 11.5px;
+  color: var(--color-text-muted);
+}
+
+.checkDot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid rgba(63, 125, 92, 0.35);
+  background: transparent;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.checkDotDone {
+  background: var(--color-primary-accent);
+  border-color: var(--color-primary-accent);
+}
+
+// Monthly
+.statRow {
+  display: flex;
+  gap: 10px;
+}
+
+.statCard {
+  flex: 1;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 1px 2px rgba(43, 42, 37, 0.05);
+}
+
+.statValue {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.monthlyList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 8px;
+}
+
+.monthlyItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 13px 16px;
+  box-shadow: 0 1px 2px rgba(43, 42, 37, 0.05);
+}
+
+.monthlyItemBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ddayBadge {
+  font-size: 11.5px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.ddayUrgent {
+  color: var(--color-danger);
+}
+
+.ddaySoon {
+  color: var(--color-warning);
+}
+
+.ddayLater {
+  color: var(--color-primary-accent);
+}
+
+.removeBtn {
+  border: none;
+  background: transparent;
+  color: var(--color-danger);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: var(--space-xs);
+  flex-shrink: 0;
+}
+
+// Plant status cards
+.plantGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.plantCard {
+  background: #fff;
+  border-radius: 18px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(43, 42, 37, 0.06);
+}
+
+.plantCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.plantAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+%pillBase {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.pillGood {
+  @extend %pillBase;
+  color: var(--color-success);
+  background: var(--color-success-bg);
+}
+
+.pillCaution {
+  @extend %pillBase;
+  color: var(--color-warning);
+  background: var(--color-warning-bg);
+}
+
+.pillDanger {
+  @extend %pillBase;
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+
+.plantCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.plantNameInput {
+  flex: 1;
+  border: none;
+  border-bottom: 2px solid var(--color-border);
+  background: transparent;
+  padding: var(--space-xs) 0;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--color-text);
+  font-family: inherit;
+}
+
+.plantNameInput:focus-visible {
+  outline: none;
+  border-bottom-color: var(--color-primary);
+}
+
+// Status edit form
+.statusForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.formField label {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.formField input {
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.formField input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+.formActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.saveBtn {
+  padding: var(--space-sm) var(--space-lg);
+  border: none;
+  border-radius: 10px;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.savedNotice {
+  color: var(--color-primary-accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.ctaBtn {
+  text-align: center;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 12px 0;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  margin-bottom: 24px;
+}

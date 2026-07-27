@@ -1,0 +1,28 @@
+// Figma MCP로 추출한 디자인 토큰 - 수동 수정 금지
+:root {
+  --color-primary: #1f4d3a;
+  --color-primary-accent: #3f7d5c;
+  --color-primary-light: #e4eee3;
+  --color-warning: #9a6b1e;
+  --color-warning-bg: #fbefd9;
+  --color-danger: #b4433a;
+  --color-danger-bg: #fbe4e1;
+  --color-success: #2f7a4c;
+  --color-success-bg: #dceedd;
+  --color-page-bg: #edeae2;
+  --color-app-bg: #f7f4ee;
+  --color-surface: #ffffff;
+  --color-text: #2b2a25;
+  --color-text-muted: rgba(43, 42, 37, 0.5);
+  --color-border: rgba(43, 42, 37, 0.08);
+
+  --font-sans: 'Noto Sans KR', sans-serif;
+  --font-serif: 'Gowun Batang', serif;
+  --font-size-body: 1rem;
+  --font-size-heading: 1.5rem;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+}
